@@ -4,11 +4,11 @@ This is a simple login form that can be used as a template for authentication in
 
 # Getting Started
 
-To use this login form, you will need to have Docker installed on your machine. Once you have Docker installed, you can follow these steps:
+To use this login form, you will need to have Docker installed on your machine or use gitpod environment which in this case i use the gitpod environment. They all work the same. Once you have Docker installed, you can follow these steps:
 
 1. Clone this repository to your local machine.
 
-2. Navigate to the project directory in your terminal.
+2. Navigate to the project directory in your terminal or use the gitpod terminal.
 
 3. Run the following command to build the Docker image:
 
@@ -27,7 +27,7 @@ Copy code
 ```
 
 
-Open your web browser and go to http://localhost:8080 to view the login form.
+Open your web browser and go to http://localhost:8000 to view the login form.
 
 # Usage
 
