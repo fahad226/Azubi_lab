@@ -7,7 +7,10 @@ This repository contains a Dockerfile that can be used to build an image for run
 To use this Dockerfile, you need to have the following installed on your machine:
 
 Docker
+
+Or
 gitpod.io
+
 
 # Building the Docker Image
 
