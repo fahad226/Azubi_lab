@@ -1,35 +1,36 @@
-# Fahad Docker Login Form
+# Introduction
 
-This is a simple login form that can be used as a template for authentication in web applications. It is built with HTML, CSS, and PHP, and utilizes the Apache web server and PHP 7.4 in a Docker container.
+This repository contains a Dockerfile that can be used to build an image for running a PHP web application with Apache server. The Dockerfile uses PHP 7.4 and installs the necessary packages and extensions required for the web app to run smoothly.
+
+# Prerequisites
+
+To use this Dockerfile, you need to have the following installed on your machine:
+
+Docker
 
 # Getting Started
 
-To use this login form, you will need to have Docker installed on your machine or use gitpod environment which in this case i use the gitpod environment. They all work the same. Once you have Docker installed, you can follow these steps:
+To get started, follow the steps below:
 
-1. Clone this repository to your local machine.
-
-2. Navigate to the project directory in your terminal or use the gitpod terminal.
-
-3. Run the following command to build the Docker image:
-
-Copy code
+Clone this repository to your local machine.
+Navigate to the directory where the Dockerfile and web app files are located.
+Run the following command to build the Docker image:
 
 ```bash
-  docker build -t fahad .
-```
+docker build -t your-image-name .
+````
 
-After the image is built, run the following command to start a Docker container:
-
-Copy code
+Note that you should replace your-image-name with a name that you want to give to your Docker image.
+4. Once the image is built, you can run a container with the following command:
 
 ```bash
-  docker run -d -p 8000:80 fahad
-```
+docker run -p 80:80 -d your-image-name
+``` 
+This command will run the container in detached mode (-d) and map the container's port 80 to the host's port 80 (-p 80:80).
+5. Access your web app by opening a web browser and going to http://localhost
 
+You can modify the COPY command in the Dockerfile to copy the contents of your own web app to the container.
 
-Open your web browser and go to http://localhost:8000 to view the login form.
-
-# Usage
 
 When you open the login form, you will see two fields: username and password. To test the form, use the following credentials:
 
