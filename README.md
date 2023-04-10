@@ -1,6 +1,6 @@
 # Introduction
 
-The Dockerfile in this repository is designed to create a Docker image that runs a PHP web application with an Apache server. It is equipped with the necessary packages and extensions needed for smooth operation of the web app, using PHP 7.4.Moreover, included in this repository is a basic login form that can be utilized as a template for authentication in web applications. This login form is created with HTML, CSS, and PHP and utilizes the Apache web server and PHP 7.4 inside a Docker container.
+This repository contains a Dockerfile that can be used to build an image for running a PHP web application with Apache server. The Dockerfile uses PHP 7.4 and installs the necessary packages and extensions required for the web app to run smoothly. In addition, there is a basic login form created with HTML, CSS, and PHP that can be utilized as a template for authentication in web applications.
 
 # Prerequisites
 
@@ -9,26 +9,24 @@ To use this Dockerfile, you need to have the following installed on your machine
 Docker
 Or You can use gitpod which in this case what is what i am using
 
-# Getting Started
+# Building the Docker Image
 
-To get started, follow the steps below:
-
-Clone this repository to your local machine.
-Navigate to the directory where the Dockerfile and web app files are located.
-Run the following command to build the Docker image:
+To build the Docker image, you can use the following command in the directory where the Dockerfile is located:
 
 ```bash
-docker build -t your-image-name .
+docker build -t <image-name> .
 ````
+Replace <image-name> with the name you want to give to the Docker image.
 
-Note that you should replace your-image-name with a name that you want to give to your Docker image.
- Once the image is built, you can run a container with the following command:
+
+# Running the Containerized Application
+
+To run the containerized application, use the following command:
 
 ```bash
-docker run -p 80:80 -d your-image-name
-``` 
-This command will run the container in detached mode (-d) and map the container's port 80 to the host's port 80 (-p 80:80).
-Access your web app by opening a web browser and going to http://localhost
+docker run -p 80:80 <image-name>
+```
+This command maps port 80 of the Docker container to port 80 of the host machine, allowing the web application to be accessed through a web browser by entering the host machine's IP address.
 
 You can modify the COPY command in the Dockerfile to copy the contents of your own web app to the container.
 
@@ -41,10 +39,28 @@ Password: password123
 
 If you enter the correct credentials and click the "Submit" button, you will see a welcome message. If you enter incorrect credentials, you will see an error message.
 
-# Customization
+# Pushing the Docker Image to AWS using Fargate
 
-You can customize the login form by modifying the HTML and CSS code in the index.html file. If you want to use the login form in your own web application, you can copy the PHP code from login.php and modify it to suit your needs.
+To push the Docker image to AWS, you can use Amazon Elastic Container Registry (ECR) to store and manage Docker images. Follow these steps:
 
-# License
+``bash
+$(aws ecr get-login --no-include-email --region <region>)
+````
+Replace <region> with the AWS region where the ECR repository was created.
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+Tag the Docker image using the following command:
+
+```bash
+docker tag <image-name>:latest <aws-account-id>.dkr.ecr.<region>.amazonaws.com/<repository-name>:latest
+```
+This command pushes the Docker image to the ECR repository you created earlier.
+
+Create an ECS task definition that references the Docker image stored in the ECR repository.
+
+Create an ECS service with Fargate launch type to run the containerized application using the task definition.
+
+With Fargate, you don't need to worry about the underlying infrastructure that runs your containers, as Fargate manages the infrastructure for you. Instead, you can focus on developing and deploying your containerized applications.
+
+# Conclusion
+
+This documentation has provided information on how to build a Docker image for running a PHP web application with Apache server, how to run the containerized application using Docker, and how to push the Docker image to AWS using Fargate. By following these steps, you can easily deploy your PHP web application in a containerized environment.
