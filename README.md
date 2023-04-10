@@ -22,13 +22,13 @@ docker build -t your-image-name .
 ````
 
 Note that you should replace your-image-name with a name that you want to give to your Docker image.
-4. Once the image is built, you can run a container with the following command:
+ Once the image is built, you can run a container with the following command:
 
 ```bash
 docker run -p 80:80 -d your-image-name
 ``` 
 This command will run the container in detached mode (-d) and map the container's port 80 to the host's port 80 (-p 80:80).
-5. Access your web app by opening a web browser and going to http://localhost
+Access your web app by opening a web browser and going to http://localhost
 
 You can modify the COPY command in the Dockerfile to copy the contents of your own web app to the container.
 
