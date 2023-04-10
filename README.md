@@ -1,6 +1,6 @@
 # Introduction
 
-This repository contains a Dockerfile that can be used to build an image for running a PHP web application with Apache server. The Dockerfile uses PHP 7.4 and installs the necessary packages and extensions required for the web app to run smoothly.
+The Dockerfile in this repository is designed to create a Docker image that runs a PHP web application with an Apache server. It is equipped with the necessary packages and extensions needed for smooth operation of the web app, using PHP 7.4.Moreover, included in this repository is a basic login form that can be utilized as a template for authentication in web applications. This login form is created with HTML, CSS, and PHP and utilizes the Apache web server and PHP 7.4 inside a Docker container.
 
 # Prerequisites
 
