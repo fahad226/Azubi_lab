@@ -43,9 +43,9 @@ If you enter the correct credentials and click the "Submit" button, you will see
 
 To push the Docker image to AWS, you can use Amazon Elastic Container Registry (ECR) to store and manage Docker images. Follow these steps:
 
-``bash
+```bash
 $(aws ecr get-login --no-include-email --region <region>)
-````
+```
 Replace <region> with the AWS region where the ECR repository was created.
 
 Tag the Docker image using the following command:
