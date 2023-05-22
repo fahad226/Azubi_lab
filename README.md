@@ -1,3 +1,5 @@
+## PHP Apache Docker Image with Login Form: Scalable Deployment with AWS Fargate and Amazon ECR
+
 # Introduction
 
 This repository contains a Dockerfile that can be used to build an image for running a PHP web application with Apache server. The Dockerfile uses PHP 7.4 and installs the necessary packages and extensions required for the web app to run smoothly. In addition, there is a basic login form created with HTML, CSS, and PHP that can be utilized as a template for authentication in web applications. The resulting Docker image can be pushed to an Amazon Elastic Container Registry (ECR) repository and deployed to AWS Fargate for a scalable and cost-effective container deployment solution.
