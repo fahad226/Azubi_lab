@@ -1,4 +1,4 @@
-## PHP Apache Docker Image with Login Form: Scalable Deployment with AWS Fargate and Amazon ECR
+# Creating a Docker Image for PHP Web App and Apache Server: Leveraging AWS Fargate and Amazon ECR for Scalable Deployment
 
 # Introduction
 
